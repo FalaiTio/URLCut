@@ -1,0 +1,5 @@
+# Authentication
+AuthType Basic
+AuthName "devShort admin area"
+AuthUserFile /var/www/app/shorturl/admin/.htpasswd
+require valid-user

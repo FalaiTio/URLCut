@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+}
+
+.logo a img{
+    width: 150px !important;
+}
+
+.heatmap {
+    overflow-x: auto;
+}
+
+.font-12 {
+    font-size: 12px;
+}

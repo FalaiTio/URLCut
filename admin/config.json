@@ -1,0 +1,16 @@
+{
+    "installer": {
+		"username":"admin",
+		"password":"admin"
+	},
+    "settings": {
+        "name": "Encurtador de URL - URLCut",
+        "author": "Ramon Veloso",
+        "home_link": "https:\/\/github.com\/FalaiTio\/URLCut",
+        "favicon": "assets\/icon.png",
+        "custom_links": {
+            "devShort wiki": "https:\/\/github.com\/FalaiTio\/URLCut\/wiki",
+            "devShort author": "https:\/\/github.com\/FalaiTio\/URLCut"
+        }
+    }
+}
