@@ -67,24 +67,33 @@ The above copyright notice and this permission notice shall be included in all c
                         <p>Home</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./admin/index.php">
-                        <i class="material-icons">poll</i>
-                        <p>Painel</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./admin/links.php">
-                        <i class="material-icons">article</i>
-                        <p>Links Existentes</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./admin/user.php">
-                        <i class="material-icons">person</i>
-                        <p>Usuários</p>
-                    </a>
-                </li>
+                <?php if (isset($_SESSION['usuario_logado'])): ?>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./admin/index.php">
+                            <i class="material-icons">poll</i>
+                            <p>Painel</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./admin/links.php">
+                            <i class="material-icons">article</i>
+                            <p>Links Existentes</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./admin/user.php">
+                            <i class="material-icons">person</i>
+                            <p>Usuários</p>
+                        </a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./login.php">
+                            <i class="material-icons">lock</i>
+                            <p>Login</p>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
@@ -175,7 +184,8 @@ The above copyright notice and this permission notice shall be included in all c
                     &copy;
                     <script>
                         document.write(new Date().getFullYear())
-                    </script>, layout made with <i class="material-icons">favorite</i> by
+                    </script>
+                    , layout made with <i class="material-icons">favorite</i> by
                     <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
                 </div>
             </div>

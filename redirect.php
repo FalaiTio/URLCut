@@ -7,10 +7,7 @@
     $db = Db::getInstance();
     $connection = $db->getConnection();
 
-    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $url_components = parse_url($url);
-    parse_str($url_components['query'], $params);
-    $short = htmlspecialchars($params['short']);
+    $short = htmlspecialchars($_GET['short']);
 
     $return_404 = array("favicon.ico", "assets/vendor/bootstrap/bootstrap.min.css.map", "assets/vendor/frappe-charts/frappe-charts.min.iife.js.map");
 
@@ -32,7 +29,7 @@
         $connection = $db->getConnection();
 
         $filename = $base_path . DIRECTORY_SEPARATOR . "stats.json";
-        $stats = json_decode(array(), true);
+        $stats = json_decode('', true);
         file_put_contents($filename, json_encode($stats, JSON_PRETTY_PRINT));
         $time_save = mktime(1, 1, 1, date('m'), date('d')+1, date('Y'));
 
@@ -131,21 +128,12 @@
 
 <footer class="footer">
     <div class="container-fluid">
-        <nav class="float-left">
-            <ul>
-                <li>
-                    <a href="https://www.ramonveloso.dev.br" target="_blank">
-                        Autor do projeto
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright float-right font-12">
+        <div class="copyright text-center">
             &copy;
             <script>
                 document.write(new Date().getFullYear())
-            </script>, layout made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            </script>
+            , SESCOOP <i class="material-icons">favorite</i> Somos Cooperativismo
         </div>
     </div>
 </footer>
